@@ -1,0 +1,30 @@
+<%
+/*
+Expected variables:
+- site
+- theme
+*/
+%>
+
+<footer class="site-footer">
+  
+  <div class="footer-content">
+    
+    <!-- Credits / licensing -->
+    <p class="footer-credits">
+      <%= site.footer.credits %>
+    </p>
+
+    <!-- Copyright -->
+    <p class="footer-copy">
+      <%= site.footer.copyright %> — Theme: <%= theme.theme.name %> v<%= theme.theme.version %>
+    </p>
+
+    <!-- Optional "powered by" note -->
+    <p class="footer-powered">
+      Powered by a custom <strong>Wikidot-like SCP engine</strong>
+    </p>
+
+  </div>
+
+</footer>
