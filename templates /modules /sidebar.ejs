@@ -1,0 +1,73 @@
+<%
+/*
+Expected variables:
+- site
+- theme
+- page (optional)
+- user (optional)
+*/
+%>
+
+<nav class="sidebar">
+
+  <!-- Site Navigation -->
+  <section class="sidebar-block">
+    <h3 class="sidebar-title">Navigation</h3>
+
+    <ul class="sidebar-nav">
+      <% site.navigation.forEach(item => { %>
+        <li>
+          <a href="/<%= item.page %>">
+            <%= item.title %>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
+
+  <!-- Page Tools -->
+  <% if (page) { %>
+    <section class="sidebar-block">
+      <h3 class="sidebar-title">Page Tools</h3>
+
+      <ul class="sidebar-tools">
+        <li><a href="/edit/<%= page.name %>">Edit</a></li>
+        <li><a href="/history/<%= page.name %>">History</a></li>
+        <li><a href="/tags/<%= page.name %>">Tags</a></li>
+        <li><a href="/source/<%= page.name %>">Source</a></li>
+      </ul>
+    </section>
+  <% } %>
+
+  <!-- User Tools -->
+  <section class="sidebar-block">
+    <h3 class="sidebar-title">User</h3>
+
+    <% if (user) { %>
+      <p class="sidebar-user">
+        Logged in as <strong><%= user.name %></strong>
+      </p>
+
+      <ul class="sidebar-tools">
+        <li><a href="/logout">Log out</a></li>
+        <li><a href="/profile">Profile</a></li>
+      </ul>
+    <% } else { %>
+      <ul class="sidebar-tools">
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/register">Register</a></li>
+      </ul>
+    <% } %>
+  </section>
+
+  <!-- Site Info -->
+  <section class="sidebar-block">
+    <h3 class="sidebar-title">Site Info</h3>
+
+    <p class="sidebar-meta">
+      Language: <%= site.site.language.toUpperCase() %><br>
+      Theme: <%= theme.theme.name %>
+    </p>
+  </section>
+
+</nav>
