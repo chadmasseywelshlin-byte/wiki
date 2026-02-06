@@ -1,0 +1,175 @@
+/* ===============================
+   Base page setup
+   =============================== */
+
+body {
+  font-family: "Source Serif 4", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+/* ===============================
+   Container
+   =============================== */
+
+#container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+#content {
+  flex: 1;
+  max-width: 740px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+   Sidebar
+   =============================== */
+
+#sidebar {
+  width: 200px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#sidebar.left { order: -1; }
+#sidebar.right { order: 1; }
+
+.sidebar-block {
+  margin-bottom: 16px;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  font-size: 13px;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 6px;
+}
+
+.sidebar a {
+  color: #222;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Page content
+   =============================== */
+
+.page-content {
+  margin-top: 0;
+}
+
+/* Collapsible blocks (future [[collapsible]]) */
+.collapsible {
+  border: 1px solid #ccc;
+  background: #eee;
+  padding: 8px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 8px;
+  border-top: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+/* ===============================
+   SCP Rating box
+   =============================== */
+
+.scp-rating {
+  float: right;
+  border: 1px solid #999;
+  background: #eee;
+  padding: 4px 6px;
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+.scp-rating .rate-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 20px;
+}
+
+.scp-rating .rating-score {
+  margin: 0 6px;
+  font-weight: bold;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
+.site-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  padding: 12px 0;
+  background: #f9f9f9;
+  margin-top: 40px;
+}
+
+/* ===============================
+   Misc
+   =============================== */
+
+.editor-textarea {
+  width: 100%;
+  height: 400px;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.editor-actions {
+  margin-top: 8px;
+}
+
+.action-btn, .cancel-btn {
+  text-decoration: none;
+  margin-right: 8px;
+  font-size: 14px;
+  padding: 4px 6px;
+  border: 1px solid #aaa;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.action-btn:hover, .cancel-btn:hover {
+  background: #e0e0e0;
+}
