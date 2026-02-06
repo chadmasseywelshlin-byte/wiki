@@ -1,0 +1,64 @@
+<%
+// Expected variables:
+// - site
+// - theme
+// - page
+// - content
+// - isEditing (boolean)
+// - user (optional)
+%>
+
+<section class="page-header">
+
+  <h1 class="page-title">
+    <%= page.title || page.name %>
+  </h1>
+
+  <% if (page.tags && page.tags.length) { %>
+    <div class="page-tags">
+      <% page.tags.forEach(tag => { %>
+        <span class="tag"><%= tag %></span>
+      <% }) %>
+    </div>
+  <% } %>
+
+  <div class="page-actions">
+
+    <% if (user) { %>
+      <a href="/edit/<%= page.name %>" class="action-btn">Edit</a>
+    <% } %>
+
+    <a href="/history/<%= page.name %>" class="action-btn">History</a>
+    <a href="/tags/<%= page.name %>" class="action-btn">Tags</a>
+
+  </div>
+
+</section>
+
+<hr>
+
+<section class="page-body">
+
+  <% if (isEditing) { %>
+
+    <!-- EDIT MODE -->
+    <form method="POST" action="/save/<%= page.name %>">
+      <textarea name="content" class="editor-textarea"><%= page.raw %></textarea>
+
+      <div class="editor-actions">
+        <button type="submit">Save</button>
+        <a href="/<%= page.name %>" class="cancel-btn">Cancel</a>
+      </div>
+    </form>
+
+  <% } else { %>
+
+    <!-- VIEW MODE -->
+    <div class="page-rendered">
+      <%- content %>
+    </div>
+
+  <% } %>
+
+</section>
+
