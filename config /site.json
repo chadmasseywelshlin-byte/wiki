@@ -1,0 +1,45 @@
+{
+  "site": {
+    "name": "PNX-JP",
+    "domain": "pnx-jp.net",
+    "language": "jp",
+    "timezone": "Europe/Moscow"
+  },
+
+  "branding": {
+    "title": "SCP Foundation",
+    "subtitle": "Secure. Contain. Protect.",
+    "logo": "/img/logo.png"
+  },
+
+  "theme": {
+    "name": "scp-classic",
+    "defaultLayout": "page",
+    "sidebar": true
+  },
+
+  "navigation": [
+    { "title": "Main", "page": "main" },
+    { "title": "LOGs", "page": "log-list" },
+    { "title": "Tales", "page": "tales" },
+    { "title": "About", "page": "about" }
+  ],
+
+  "features": {
+    "ratings": true,
+    "comments": false,
+    "pageHistory": false,
+    "search": false
+  },
+
+  "content": {
+    "pageExtension": ".md",
+    "defaultPage": "main",
+    "notFoundPage": "404"
+  },
+
+  "footer": {
+    "copyright": "© Project Nexium",
+    "credits": "Unless otherwise stated, content is available under CC BY-SA 3.0"
+  }
+}
