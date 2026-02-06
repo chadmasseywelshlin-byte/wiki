@@ -1,0 +1,28 @@
+{
+  "name": "wikidot-engine",
+  "version": "0.1.0",
+  "description": "A Wikidot-like site engine for SCP-style websites (SCP-RU inspired).",
+  "main": "engine.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node engine.js",
+    "dev": "nodemon engine.js"
+  },
+  "keywords": [
+    "wikidot",
+    "scp",
+    "wiki",
+    "engine",
+    "site-generator"
+  ],
+  "author": "YourNameHere",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "marked": "^11.1.0",
+    "ejs": "^3.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
