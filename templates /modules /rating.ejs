@@ -1,0 +1,20 @@
+<%
+/*
+Expected variables:
+- page.name
+- page.rating (number, optional)
+*/
+const score = typeof page.rating === "number" ? page.rating : 0;
+%>
+
+<div class="scp-rating" data-page="<%= page.name %>">
+
+  <button class="rate-btn upvote" data-value="1" title="Upvote">+</button>
+
+  <span class="rating-score" id="rating-score-<%= page.name %>">
+    <%= score %>
+  </span>
+
+  <button class="rate-btn downvote" data-value="-1" title="Downvote">−</button>
+
+</div>
