@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="<%= site.site.language || 'en' %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    <%= pageTitle ? pageTitle + " — " : "" %>
+    <%= site.branding.title %>
+  </title>
+
+  <!-- Theme CSS -->
+  <% theme.assets.css.forEach(file => { %>
+    <link rel="stylesheet" href="<%= file %>">
+  <% }) %>
+
+  <!-- Theme Fonts -->
+  <% if (theme.assets.fonts) { %>
+    <% theme.assets.fonts.forEach(font => { %>
+      <link rel="stylesheet" href="<%= font %>">
+    <% }) %>
+  <% } %>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <%- include(`modules/${theme.modules.header}`, { site, theme }) %>
+  </header>
+
+  <div id="container">
+
+    <!-- Sidebar -->
+    <% if (theme.layout.sidebar) { %>
+      <aside id="sidebar" class="<%= theme.layout.sidebarPosition %>">
+        <%- include(`modules/${theme.modules.sidebar}`, { site, theme }) %>
+      </aside>
+    <% } %>
+
+    <!-- Main Content -->
+    <main id="content">
+
+      <% if (theme.scp.rating.enabled) { %>
+        <%- include(`modules/${theme.modules.rating}`, { page }) %>
+      <% } %>
+
+      <article class="page-content">
+        <%- content %>
+      </article>
+
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <%- include(`modules/${theme.modules.footer}`, { site, theme }) %>
+  </footer>
+
+  <!-- Theme JS -->
+  <% if (theme.assets.js) { %>
+    <% theme.assets.js.forEach(file => { %>
+      <script src="<%= file %>"></script>
+    <% }) %>
+  <% } %>
+
+</body>
+</html>
